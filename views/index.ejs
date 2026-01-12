@@ -1,0 +1,32 @@
+<div class="author">
+    <h1 class="author__heading">Hi, I'm Paperbag</h1>
+    <p class="author__body">I'm a web-developer and a content creator</p>
+</div>
+
+<img src="/img/hero__img.jpg" alt="A kid looking out the window" class="hero__img" width="981" height="528">
+
+
+<div><h2><a class="admin" href="/admin/">Admin</a></h2></div>
+<section class="articles">
+    <h2 class="articles__heading">Latest articles</h2>
+    <ul class="articles__ul">
+       
+       <% data.forEach(post => { %>
+      
+        <li>
+            <a href=" /post/<%= post._id %>">
+                <span><%= post.title %></span>
+                <span class="articles_list_date"><%= post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+     <% }) %>
+    </ul>
+
+    <% if (nextPage !== null) { %>
+    <a href="/?page=<%= nextPage %>" class="pagination">&lt; View older Posts</a>
+
+    <% } %>
+
+
+
+</section>
